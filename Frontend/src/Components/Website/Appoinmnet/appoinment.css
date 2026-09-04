@@ -1,0 +1,351 @@
+/* ═══════════════════════════════════════════════════════
+   4Health Homeopathy — Appointment Popup CSS
+   Design tokens match Navbar.css exactly
+═══════════════════════════════════════════════════════ */
+
+/* Re-use the same tokens from Navbar.css */
+:root {
+  --nh-blue-dark:  #0F3D6E;
+  --nh-blue:       #0F6BAF;
+  --nh-green:      #4BA86A;
+  --nh-green-dark: #3a8a56;
+  --nh-text:       #233143;
+  --nh-muted:      #5F6B7A;
+  --nh-border:     #E8EDF2;
+  --nh-bg:         #ffffff;
+  --nh-transition: 0.25s ease;
+}
+
+/* ── Overlay ── */
+.ap-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  background: rgba(15, 30, 43, 0.50);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s ease;
+}
+
+.ap-overlay--open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── Modal Card ── */
+.ap-modal {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 24px 80px rgba(15, 61, 110, 0.18);
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: translateY(20px) scale(0.98);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.28s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.ap-modal--open {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* Scrollbar styling */
+.ap-modal::-webkit-scrollbar { width: 6px; }
+.ap-modal::-webkit-scrollbar-track { background: transparent; }
+.ap-modal::-webkit-scrollbar-thumb { background: var(--nh-border); border-radius: 3px; }
+
+/* ── Header ── */
+.ap-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 28px 28px 20px;
+  border-bottom: 1px solid var(--nh-border);
+  background: linear-gradient(135deg, rgba(75, 168, 106, 0.04) 0%, rgba(15, 107, 175, 0.04) 100%);
+  border-radius: 20px 20px 0 0;
+}
+
+.ap-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ap-header-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  background: rgba(75, 168, 106, 0.10);
+  color: var(--nh-green-dark);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 20px;
+  width: fit-content;
+  margin-bottom: 2px;
+}
+
+.ap-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--nh-blue-dark);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.ap-subtitle {
+  font-size: 0.83rem;
+  color: var(--nh-muted);
+  margin: 0;
+}
+
+.ap-close {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--nh-muted);
+  transition: background var(--nh-transition), color var(--nh-transition);
+  margin-top: 2px;
+}
+
+.ap-close:hover {
+  background: rgba(220, 53, 69, 0.10);
+  color: #dc3545;
+}
+
+/* ── Body ── */
+.ap-body {
+  padding: 24px 28px 28px;
+}
+
+/* ── Form ── */
+.ap-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ap-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.ap-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ap-field--full {
+  grid-column: 1 / -1;
+}
+
+/* ── Labels ── */
+.ap-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--nh-blue-dark);
+  letter-spacing: 0.01em;
+}
+
+.ap-label svg {
+  color: var(--nh-green);
+}
+
+.ap-label-optional {
+  font-weight: 400;
+  color: var(--nh-muted);
+  font-size: 0.74rem;
+}
+
+/* ── Inputs ── */
+.ap-input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--nh-border);
+  border-radius: 10px;
+  font-size: 0.86rem;
+  font-family: 'Poppins', sans-serif;
+  color: var(--nh-text);
+  background: #ffffff;
+  outline: none;
+  transition: border-color var(--nh-transition), box-shadow var(--nh-transition);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.ap-input::placeholder {
+  color: #B0BACA;
+  font-size: 0.84rem;
+}
+
+.ap-input:focus {
+  border-color: var(--nh-green);
+  box-shadow: 0 0 0 3px rgba(75, 168, 106, 0.12);
+}
+
+.ap-input:hover:not(:focus) {
+  border-color: #C5D0DA;
+}
+
+/* Date input fix */
+.ap-input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+/* ── Select Wrapper ── */
+.ap-select-wrap {
+  position: relative;
+}
+
+.ap-select {
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.ap-select-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--nh-muted);
+  pointer-events: none;
+}
+
+/* ── Textarea ── */
+.ap-textarea {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.55;
+}
+
+/* ── Submit Button — matches .nh-btn-book exactly ── */
+.ap-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 13px 28px;
+  background: linear-gradient(135deg, #4BA86A 0%, #0F6BAF 100%);
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 0.90rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: opacity var(--nh-transition), transform var(--nh-transition), box-shadow var(--nh-transition);
+  box-shadow: 0 4px 16px rgba(75, 168, 106, 0.28);
+  white-space: nowrap;
+}
+
+.ap-btn-primary:hover {
+  opacity: 0.92;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(75, 168, 106, 0.35);
+}
+
+.ap-btn-primary:active {
+  transform: translateY(0);
+}
+
+.ap-btn-submit {
+  width: 100%;
+  margin-top: 4px;
+  padding: 15px 28px;
+  font-size: 0.93rem;
+}
+
+/* ── Success State ── */
+.ap-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px 0 8px;
+  gap: 12px;
+}
+
+.ap-success-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  background: rgba(75, 168, 106, 0.08);
+  border-radius: 50%;
+  margin-bottom: 4px;
+}
+
+.ap-success-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--nh-blue-dark);
+  margin: 0;
+}
+
+.ap-success-text {
+  font-size: 0.88rem;
+  color: var(--nh-muted);
+  line-height: 1.65;
+  margin: 0;
+  max-width: 360px;
+}
+
+.ap-success-text strong {
+  color: var(--nh-text);
+  font-weight: 600;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .ap-modal {
+    border-radius: 16px 16px 0 0;
+    max-height: 92vh;
+    margin-top: auto;
+  }
+
+  .ap-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .ap-header {
+    padding: 22px 20px 16px;
+  }
+
+  .ap-body {
+    padding: 20px 20px 24px;
+  }
+
+  .ap-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .ap-title {
+    font-size: 1.15rem;
+  }
+}

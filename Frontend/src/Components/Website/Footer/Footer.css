@@ -1,0 +1,563 @@
+/* ═══════════════════════════════════════════════════════
+   4Health Homeopathy — Premium Footer CSS
+   Compact mobile layout
+═══════════════════════════════════════════════════════ */
+
+:root {
+  --ft-blue-dark: #0F3D6E;
+  --ft-blue: #0F6BAF;
+  --ft-green: #4BA86A;
+  --ft-green-light: #7BE495;
+  --ft-border: rgba(255, 255, 255, 0.12);
+  --ft-muted: rgba(255, 255, 255, 0.75);
+  --ft-transition: 0.3s ease;
+  --ft-font: "Poppins", sans-serif;
+}
+
+/* ==============================
+   Footer Main
+================================= */
+
+.ft-footer {
+  background: #000;
+  color: #fff;
+  font-family: var(--ft-font);
+  padding: 30px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.ft-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.12), transparent 35%),
+    radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.08), transparent 40%);
+  pointer-events: none;
+}
+
+.ft-leaf-bg {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 350px;
+  height: 350px;
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+/* ==============================
+   Container
+================================= */
+
+.ft-container {
+  max-width: 1310px;
+  margin: auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.ft-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 45px;
+  padding-bottom: 30px;
+}
+
+/* ==============================
+   Logo & About
+================================= */
+
+.ft-logo-img {
+  height: 90px;
+  width: auto;
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+
+.ft-about-text {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--ft-muted);
+  max-width: 320px;
+  margin-bottom: 24px;
+}
+
+/* ==============================
+   Social Icons
+================================= */
+
+.ft-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.ft-social-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--ft-transition);
+}
+
+.ft-social-icon:hover {
+  background: var(--ft-green);
+  border-color: var(--ft-green);
+  color: #fff;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(75, 168, 106, 0.35);
+}
+
+/* ==============================
+   Section Headings
+================================= */
+
+.ft-heading {
+  position: relative;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 28px;
+  color: #fff;
+  padding-bottom: 10px;
+}
+
+.ft-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 45px;
+  height: 3px;
+  border-radius: 50px;
+  background: var(--ft-green-light);
+}
+
+/* ==============================
+   Links
+================================= */
+
+.ft-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ft-links li {
+  margin: 0;
+}
+
+.ft-links a {
+  text-decoration: none;
+  color: var(--ft-muted);
+  font-size: 0.88rem;
+  transition: all var(--ft-transition);
+}
+
+.ft-links a:hover {
+  color: var(--ft-green-light);
+  padding-left: 6px;
+}
+
+/* ==============================
+   Treatments dropdown
+================================= */
+
+.ft-dropdown-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--ft-muted);
+  font-size: 0.88rem;
+  font-family: inherit;
+  text-align: left;
+  transition: all var(--ft-transition);
+}
+
+.ft-dropdown-toggle:hover {
+  color: var(--ft-green-light);
+}
+
+.ft-dropdown-toggle svg {
+  flex-shrink: 0;
+  transition: transform var(--ft-transition);
+}
+
+.ft-dropdown-toggle[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.ft-sublinks {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0 0 0 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.ft-sublinks a {
+  text-decoration: none;
+  color: var(--ft-muted);
+  font-size: 0.82rem;
+  transition: all var(--ft-transition);
+}
+
+.ft-sublinks a:hover {
+  color: var(--ft-green-light);
+  padding-left: 6px;
+}
+
+/* ==============================
+   Contact
+================================= */
+
+.ft-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.ft-contact-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ft-contact-text {
+  color: var(--ft-muted);
+  font-size: 0.87rem;
+  line-height: 1.7;
+  min-width: 0;
+}
+
+.ft-contact-text strong {
+  display: block;
+  color: #fff;
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+
+.ft-contact-text a {
+  color: var(--ft-muted);
+  text-decoration: none;
+  transition: color var(--ft-transition);
+  overflow-wrap: anywhere;
+}
+
+.ft-contact-text a:hover {
+  color: var(--ft-green-light);
+}
+
+/* ==============================
+   Bottom Bar
+================================= */
+
+.ft-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.ft-copyright {
+  margin: 0;
+  font-size: 0.83rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.ft-bottom-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ft-bottom-links a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.83rem;
+  transition: color var(--ft-transition);
+}
+
+.ft-bottom-links a:hover {
+  color: var(--ft-green-light);
+}
+
+/* ==============================
+   Tablet
+================================= */
+
+@media (max-width: 1024px) {
+  .ft-container {
+    padding: 0 28px;
+  }
+
+  .ft-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 28px;
+  }
+}
+
+/* ==============================
+   Mobile — compact layout
+================================= */
+
+@media (max-width: 768px) {
+  .ft-footer {
+    padding-top: 24px;
+  }
+
+  .ft-container {
+    padding: 0 16px;
+  }
+
+  .ft-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 14px;
+    padding-bottom: 22px;
+    text-align: left;
+  }
+
+  /* About spans full width */
+  .ft-about-column {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .ft-logo-img {
+    display: block;
+    width: auto;
+    height: 78px;
+    margin: 0 auto 10px;
+  }
+
+  .ft-about-text {
+    max-width: 360px;
+    margin: 0 auto 12px;
+    font-size: 0.78rem;
+    line-height: 1.55;
+  }
+
+  .ft-socials {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .ft-social-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 0.88rem;
+  }
+
+  /* Quick links + Specializations sit side-by-side */
+  .ft-quick-column,
+  .ft-specializations-column {
+    min-width: 0;
+  }
+
+  .ft-heading {
+    display: block;
+    width: fit-content;
+    font-size: 0.86rem;
+    margin: 0 0 12px;
+    padding-bottom: 7px;
+  }
+
+  .ft-heading::after {
+    width: 30px;
+    height: 2px;
+  }
+
+  .ft-links {
+    gap: 8px;
+  }
+
+  .ft-links a,
+  .ft-dropdown-toggle {
+    font-size: 0.74rem;
+    line-height: 1.35;
+  }
+
+  .ft-dropdown-toggle {
+    width: auto;
+    justify-content: flex-start;
+    gap: 5px;
+  }
+
+  .ft-sublinks {
+    margin-top: 7px;
+    padding-left: 9px;
+    gap: 7px;
+  }
+
+  .ft-sublinks a {
+    font-size: 0.68rem;
+  }
+
+  /* Contact spans full width and uses a compact 2-column grid */
+  .ft-contact-column {
+    grid-column: 1 / -1;
+  }
+
+  .ft-contact-column .ft-heading {
+    margin-bottom: 12px;
+  }
+
+  .ft-contact-column {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 0px;
+    align-items: start;
+  }
+
+  .ft-contact-column > .ft-heading {
+    grid-column: 1 / -1;
+  }
+
+  .ft-contact-item {
+    gap: 8px;
+    margin-bottom: 10px;
+    min-width: 0;
+  }
+
+  /* Address stays full width */
+  .ft-contact-item:first-of-type {
+    grid-column: 1 / -1;
+  }
+
+  .ft-contact-icon {
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    font-size: 0.76rem;
+  }
+
+  .ft-contact-text {
+    width: auto;
+    min-width: 0;
+    font-size: 0.7rem;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+
+  .ft-contact-text strong {
+    margin-bottom: 2px;
+    font-size: 0.72rem;
+  }
+
+  /* Bottom bar */
+  .ft-bottom {
+    padding: 11px 0 13px;
+    gap: 5px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .ft-copyright,
+  .ft-bottom-links a {
+    font-size: 0.68rem;
+    line-height: 1.45;
+  }
+
+  .ft-bottom-links {
+    gap: 12px;
+    justify-content: center;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 420px) {
+  .ft-footer {
+    padding-top: 20px;
+  }
+
+  .ft-container {
+    padding: 0 13px;
+  }
+
+  .ft-grid {
+    gap: 20px 10px;
+  }
+
+  .ft-logo-img {
+    height: 70px;
+  }
+
+  .ft-about-text {
+    max-width: 320px;
+    font-size: 0.73rem;
+  }
+
+  .ft-social-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .ft-heading {
+    font-size: 0.82rem;
+  }
+
+  .ft-links a,
+  .ft-dropdown-toggle {
+    font-size: 0.7rem;
+  }
+
+  .ft-contact-column {
+    grid-template-columns: 1fr;
+  }
+
+  .ft-contact-column > .ft-heading,
+  .ft-contact-item:first-of-type {
+    grid-column: auto;
+  }
+
+  .ft-contact-item {
+    margin-bottom: 8px;
+  }
+
+  .ft-contact-text {
+    font-size: 0.68rem;
+  }
+
+  .ft-contact-text strong {
+    font-size: 0.7rem;
+  }
+
+  .ft-bottom {
+    padding-top: 10px;
+    padding-bottom: 11px;
+  }
+}
