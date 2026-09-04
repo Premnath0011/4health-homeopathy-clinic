@@ -103,18 +103,18 @@ The admin panel provides centralized management of the clinic website.
 ![4Health Teatments](screenshots/treatment.png)
 
 #### Appointment
-![Appointment Page](screenshots/appointment.png)
+![Appointment Page](screenshots/contact.png)
 
 ### 🔐 Admin Dashboard
 
 #### Admin Login
-![Admin Login](screenshots/admin-login.png)
+![Admin Login](screenshots/admin_login.png)
 
 #### Dashboard
-![Admin Dashboard](screenshots/admin-dashboard.png)
+![Admin Dashboard](screenshots/admin_dashboard.png)
 
 #### Blog Management
-![Blog Management](screenshots/admin-blog.png)
+![Blog Management](screenshots/admin_blog.png)
 
 
 
